@@ -144,19 +144,19 @@ document.getElementById("compress-btn").addEventListener("click", async () => {
 });
 
 // Unlock PDF (Remove Permissions)
-document.getElementById("unlock-btn").addEventListener("click", async () => {
-    const file = document.getElementById("unlock-input").files[0];
-    if (!file) {
-        alert("Please select a PDF file.");
-        return;
-    }
+// document.getElementById("unlock-btn").addEventListener("click", async () => {
+//     const file = document.getElementById("unlock-input").files[0];
+//     if (!file) {
+//         alert("Please select a PDF file.");
+//         return;
+//     }
 
-    const { PDFDocument } = PDFLib;
-    const pdf = await PDFDocument.load(await file.arrayBuffer());
-    const unlockedPdfBytes = await pdf.save();
-    const blob = new Blob([unlockedPdfBytes], { type: "application/pdf" });
-    downloadFile(blob, "unlocked.pdf");
-});
+//     const { PDFDocument } = PDFLib;
+//     const pdf = await PDFDocument.load(await file.arrayBuffer());
+//     const unlockedPdfBytes = await pdf.save();
+//     const blob = new Blob([unlockedPdfBytes], { type: "application/pdf" });
+//     downloadFile(blob, "unlocked.pdf");
+// });
 
 // Rotate PDF Pages
 document.getElementById("rotate-btn").addEventListener("click", async () => {
